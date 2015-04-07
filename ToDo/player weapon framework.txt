@@ -1,0 +1,12 @@
+Weapon
+	- rof
+	- damage
+	- gameobject
+	- lifetime
+	
+PlayerWeapon
+	- starting weapon
+	- current weapon
+	
+WeaponPickup
+	- Weapon type
