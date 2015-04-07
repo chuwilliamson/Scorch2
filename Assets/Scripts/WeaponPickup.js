@@ -8,16 +8,20 @@ function OnTriggerEnter(other : Collider){
 	
 		// when a weapon is 'picked up' it's type is set 
 	    // to the players current weapon
-		other.GetComponentInChildren(GunData).currentWeapon = type;
+	    other.GetComponentInChildren(GunData).currentWeapon = type;
+
 		other.GetComponentInChildren(GunData).weaponLifetime = type.lifetime;
 		Destroy(this.gameObject);
 	}
 }
 
-function Start () {
-	
+    function Start () {
+        
 
-}
+
+    }
+        
+	
 
 function Update () {
 
