@@ -11,6 +11,12 @@ public class CTakeDamage : MonoBehaviour {
         {
             health = -1;
         }
+
+        if (this.CompareTag("Enemy") && a_col.transform.gameObject.CompareTag("Projectile"))
+        {
+            health -= a_col.transform.gameObject.GetComponent<CProjectile>().damage;
+            Debug.Log(health);
+        }
     }
 
 	// Use this for initialization

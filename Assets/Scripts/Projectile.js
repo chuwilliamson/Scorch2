@@ -1,5 +1,6 @@
 ﻿#pragma strict
 
+public var damage : float;
 public var speed : float;
 public var lifetime : float;
 private var rb : Rigidbody;
