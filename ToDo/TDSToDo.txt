@@ -1,4 +1,2 @@
 To Do(GamePlay):
-	- player takes damage from enemies
 	- projectile changes color based on weapon type
-	- weapon reverts back to original after a certain time
