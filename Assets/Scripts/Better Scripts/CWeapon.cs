@@ -7,14 +7,14 @@ public class CWeapon : MonoBehaviour
     public float rof;
     public float damage;
     public float lifetime;
+    public string type;
     public GameObject projectile;
     public GameObject bucket;
     private float timer;
 
     // Use this for initialization
     public void Start()
-    {
-
+    { 
         timer = rof;
     }
 
@@ -30,7 +30,5 @@ public class CWeapon : MonoBehaviour
         }
 
         timer -= Time.deltaTime;
-
-
     }
 }

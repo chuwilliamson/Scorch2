@@ -4,21 +4,31 @@ using System.Collections.Generic;
 
 public class CPlayerWeapon : CWeapon {
 
+    private float startingROF;
+    private float startingDamage;
+    private float startingLifetime;
+    private string startingType;
+    private GameObject startingProjectile;
+    private GameObject startingBucket;
+
     public void WeaponPickup(CWeapon weapon)
     {
         rof = weapon.rof;
         damage = weapon.damage;
         lifetime = weapon.lifetime;
+        type = weapon.type;
         projectile = weapon.projectile;
         bucket = weapon.bucket;
-
-        Debug.Log(rof);
-        Debug.Log(damage);
     }
 
     void Awake()
     {
-         
+        startingROF = rof;
+        startingDamage = damage;
+        startingLifetime = lifetime;
+        startingType = type;
+        startingProjectile = projectile;
+        startingBucket = bucket;
     }
 
 	// Use this for initialization
@@ -31,7 +41,21 @@ public class CPlayerWeapon : CWeapon {
 	void Update () {
 
         base.Update();
+
+        if(type != "Starting Weapon")
+        {
+            lifetime -= Time.deltaTime;
+        }
 	
+        if(lifetime < 0)
+        {
+            rof = startingROF;
+            damage = startingDamage;
+            lifetime = startingLifetime;
+            type = startingType;
+            projectile = startingProjectile;
+            bucket = startingBucket;
+        }
 	}
 }
 
