@@ -1,4 +1,4 @@
-﻿#pragma strict
+﻿/*#pragma strict
 
 public var type : Gun;
 
@@ -9,12 +9,4 @@ function OnTriggerEnter(other : Collider){
 		other.GetComponentInChildren(GunData).currentWeapon = type;
 		Destroy(this.gameObject);
 	}
-}
-
-function Start () {
-
-}
-
-function Update () {
-
-}
+}*/
