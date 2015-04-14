@@ -7,15 +7,24 @@ public class CTakeDamage : MonoBehaviour {
 
     void OnCollisionEnter(Collision a_col)
     {
-        if(this.CompareTag("Projectile"))
+        if(this.CompareTag("Projectile") && a_col.transform.gameObject.tag == "Enemy")
         {
+            //if this is a projectile, destroy on impact
             health = -1;
         }
 
         if (this.CompareTag("Enemy") && a_col.transform.gameObject.CompareTag("Projectile"))
         {
             health -= a_col.transform.gameObject.GetComponent<CProjectile>().damage;
-            Debug.Log(health);
+            Debug.Log( "Enemy health: " + health);
+        }
+
+        if (this.CompareTag("Player") && a_col.transform.gameObject.CompareTag("Enemy"))
+        {
+            health -= a_col.gameObject.GetComponent<CEnemy>().attackDamage;
+            //Debug.Log("Player health: " + health);
+
+
         }
     }
 
