@@ -15,8 +15,8 @@ function OnTriggerEnter(other : Collider){
 	}
 <<<<<<< HEAD
 }*/
-=======
-}
+//=======
+//}
 
     function Start () {
         
@@ -29,4 +29,4 @@ function OnTriggerEnter(other : Collider){
 function Update () {
 
 }
->>>>>>> Garretthogan/master
+///>>>>>>> Garretthogan/master
