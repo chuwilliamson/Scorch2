@@ -6,17 +6,20 @@ public class CProjectile : MonoBehaviour {
     public float speed;
     public float lifetime;
     public float damage;
+    public float spreadRange;
 
     private Transform tr;
     private Rigidbody rb;
+    private Vector3 rand;
 
 	// Use this for initialization
 	void Start () {
 
+        rand.x = Random.Range(-spreadRange, spreadRange);
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
 
-        rb.AddForce(tr.forward * speed);
+        rb.AddForce((tr.forward + rand) * speed);
 	}
 	
 	// Update is called once per frame
