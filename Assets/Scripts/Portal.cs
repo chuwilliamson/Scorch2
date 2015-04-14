@@ -4,8 +4,12 @@ using System.Collections;
 public class Portal : MonoBehaviour {
 
 	public GameObject levelPortal;
+	public GameObject MoveOn;
 	void Start () {
 		levelPortal.SetActive (false);
+	}
+	public void OnTriggerEnter(){
+		MoveOn.SetActive(true);
 	}
 	void Update () {
         if (levelPortal.activeInHierarchy){
