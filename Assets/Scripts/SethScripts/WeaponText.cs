@@ -14,7 +14,7 @@ public class WeaponText : MonoBehaviour
 
 	void Update () 
 	{
-
+        GUI.TextArea(new Rect (10,30,200, 20), "Current weapon: " );
 	}
 
 
@@ -40,7 +40,7 @@ public class WeaponText : MonoBehaviour
 
 	void OnGUI()
 	{
-		GUI.TextArea(new Rect (10,30,200, 20), "Current weapon: " );
+		//GUI.(new Rect (10,30,200, 20), "Current weapon: " );
 		
 	}
 
