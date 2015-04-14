@@ -19,7 +19,7 @@ public class CProjectile : MonoBehaviour {
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
         float impact = gameObject.transform.localScale.magnitude;
-        rb.AddForce( ( tr.forward) + rand * speed);
+        rb.AddForce(((tr.forward * impact) + rand) * speed);
 	}
 	
 	// Update is called once per frame
