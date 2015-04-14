@@ -32,7 +32,7 @@ public class CPlayerWeapon : CWeapon {
     }
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 
         base.Start();
 	}
