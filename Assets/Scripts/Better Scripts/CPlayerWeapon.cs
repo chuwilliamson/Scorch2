@@ -14,7 +14,6 @@ public class CPlayerWeapon : CWeapon {
     public void WeaponPickup(CWeapon weapon)
     {
         rof = weapon.rof;
-        damage = weapon.damage;
         lifetime = weapon.lifetime;
         type = weapon.type;
         projectile = weapon.projectile;
@@ -24,8 +23,6 @@ public class CPlayerWeapon : CWeapon {
     void Awake()
     {
         startingROF = rof;
-        startingDamage = damage;
-        startingLifetime = lifetime;
         startingType = type;
         startingProjectile = projectile;
         startingBucket = bucket;
@@ -50,7 +47,6 @@ public class CPlayerWeapon : CWeapon {
         if(lifetime < 0)
         {
             rof = startingROF;
-            damage = startingDamage;
             lifetime = startingLifetime;
             type = startingType;
             projectile = startingProjectile;

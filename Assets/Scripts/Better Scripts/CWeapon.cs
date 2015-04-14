@@ -5,7 +5,6 @@ public class CWeapon : MonoBehaviour
 {
 
     public float rof;
-    public float damage;
     public float lifetime;
     public string type;
     public GameObject projectile;
@@ -25,10 +24,16 @@ public class CWeapon : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0) && timer < 0)
         {
             GameObject instPrefab = Instantiate(projectile, GetComponent<Transform>().position, GetComponent<Transform>().rotation) as GameObject;
-            instPrefab.transform.parent = bucket.transform;
+            instPrefab.transform.parent = GameObject.Find("Bucket").transform;
             timer = rof;
         }
 
         timer -= Time.deltaTime;
+    }
+
+    public void Randomize(float value)
+    {
+        rof = Random.Range(0.01f, value * 0.02f);
+        lifetime = Random.Range(1, value);
     }
 }
