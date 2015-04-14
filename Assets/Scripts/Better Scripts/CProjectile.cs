@@ -18,8 +18,8 @@ public class CProjectile : MonoBehaviour {
         rand.x = Random.Range(-spreadRange, spreadRange);
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
-
-        rb.AddForce((tr.forward + rand) * speed);
+        float impact = gameObject.transform.localScale.magnitude;
+        rb.AddForce( ( tr.forward) + rand * speed);
 	}
 	
 	// Update is called once per frame

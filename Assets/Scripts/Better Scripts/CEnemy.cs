@@ -20,6 +20,7 @@ public class CEnemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        agentComp = GetComponent<NavMeshAgent>();
         attackDamage = Random.Range(1, attackRange);
         armor = Random.Range(0, armorRange);
         speed = Random.Range(1, speedRange);
