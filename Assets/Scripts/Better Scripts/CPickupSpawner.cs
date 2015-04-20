@@ -27,7 +27,8 @@ public class CPickupSpawner : MonoBehaviour {
             spawnPoint.z = Random.insideUnitCircle.y * spawnRadius;
             spawnPoint.y = 0.75f;
 
-            Instantiate(pickup, spawnPoint, Quaternion.identity);
+            GameObject obj = Instantiate(pickup, spawnPoint, Quaternion.identity) as GameObject;
+            obj.transform.parent = this.gameObject.transform;
             spawnTimer = spawnRate;
         }
 
