@@ -29,6 +29,9 @@ public class CEnemySpawner : MonoBehaviour {
             GameObject obj = Instantiate(objToSpawn, spawnPoint, transform.rotation) as GameObject;
             obj.transform.parent = this.gameObject.transform;
             spawnTimer = spawnRate;
+            spawnPoint.x = Random.Range(transform.position.x * -spawnRadius, transform.position.x * spawnRadius);
+            spawnPoint.z = Random.Range(transform.position.z * -spawnRadius, transform.position.z * spawnRadius);
+            spawnPoint.y = 1.25f;
         }
 
         spawnTimer -= Time.deltaTime;
