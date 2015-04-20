@@ -39,6 +39,5 @@ public class CWeapon : MonoBehaviour
         proj.speed = Random.Range(50, value * 4);
         proj.damage = Random.Range(1, value);
         proj.spreadRange = Random.Range(0.1f, value * 0.01f);
-        Debug.Log("Projectile Damage: " + proj.damage);
     }
 }

@@ -16,7 +16,6 @@ public class CTakeDamage : MonoBehaviour {
         if (this.CompareTag("Enemy") && a_col.transform.gameObject.CompareTag("Projectile"))
         {
             health -= a_col.transform.gameObject.GetComponent<CProjectile>().damage;
-            Debug.Log( "Enemy health: " + health);
         }
 
         if (this.CompareTag("Player") && a_col.transform.gameObject.CompareTag("Enemy"))
@@ -30,7 +29,14 @@ public class CTakeDamage : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
+        GameObject obj;
+
+        if (gameObject.GetComponent<CEnemy>())
+        {
+            obj = gameObject;
+            health = obj.GetComponent<CEnemy>().health;
+        }
 	}
 	
 	// Update is called once per frame

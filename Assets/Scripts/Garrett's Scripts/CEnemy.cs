@@ -5,9 +5,11 @@ using System.Collections;
 
 public class CEnemy : MonoBehaviour {
 
-    public float armor;
-    public float speed;
+    public float health;
     public float attackDamage;
+
+    private float armor;
+    private float speed;
 
     [SerializeField]
     private float armorRange;
@@ -15,6 +17,8 @@ public class CEnemy : MonoBehaviour {
     private float speedRange;
     [SerializeField]
     private float attackRange;
+    [SerializeField]
+    private float healthRange;
     private NavMeshAgent agentComp;
 
 	// Use this for initialization
@@ -24,6 +28,7 @@ public class CEnemy : MonoBehaviour {
         attackDamage = Random.Range(1, attackRange);
         armor = Random.Range(0, armorRange);
         speed = Random.Range(1, speedRange);
+        health = Random.Range(25, healthRange);
         agentComp.speed = speed;
 	}
 	
