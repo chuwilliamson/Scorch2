@@ -34,8 +34,6 @@ public class CEnemy : MonoBehaviour {
         agentComp.speed = speed;
         healthComp.health = health;
 
-        Debug.Log("Health " + health);
-
 	}
 	
 	// Update is called once per frame
