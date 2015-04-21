@@ -23,7 +23,7 @@ public class EnemyManager : MonoBehaviour {
 		Debug.Log (enemyCount);
 		if (enemyCount <= 0 && EnemySpawnCounter <= 0)
 		{
-			//Text.SetActive(true);
+			Text.SetActive(true);
 			Portal.SetActive(true);
 		}
 	}
