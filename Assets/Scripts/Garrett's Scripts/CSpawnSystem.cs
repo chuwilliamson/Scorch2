@@ -34,7 +34,5 @@ public class CSpawnSystem {
         }
 
         spawnTimer -= Time.deltaTime;
-         aaaaa
 	}
 }
-a
