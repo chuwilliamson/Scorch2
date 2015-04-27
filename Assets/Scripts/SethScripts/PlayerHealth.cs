@@ -12,7 +12,8 @@ public class PlayerHealth : MonoBehaviour {
 	{
 		healthBarLength = Screen.width / 2;
 	}
-	
+
+
 	// Update is called once per frame
 	void Update () 
 	{
@@ -28,8 +29,12 @@ public class PlayerHealth : MonoBehaviour {
 	public void adjustCurrentHealth(int adjustment)
 	{
 		currentHealth += adjustment;
-		if (currentHealth < 0)
-						currentHealth = 0;
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+            Application.LoadLevel("GameOver");
+        }
+
 		if (currentHealth > maxHealth)
 						currentHealth = maxHealth;
 		if (maxHealth < 1)
