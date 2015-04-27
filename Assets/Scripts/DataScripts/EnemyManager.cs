@@ -8,8 +8,9 @@ public class EnemyManager : MonoBehaviour {
 	public GameObject Text;
 	public float SpawnTimer;
 	public float EnemySpawnCounter;
-	public float Level;
-	
+	public float LevelCounter;
+	public int num;
+
 	void Spawn() {
 		Vector3 newPosition = new Vector3(Random.insideUnitSphere.x * 50, transform.position.y, Random.insideUnitSphere.z * 50);
 		Instantiate(Enemy, newPosition, transform.rotation);
@@ -17,8 +18,11 @@ public class EnemyManager : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		//Level = Portal.
+		LevelCounter = GameObject.Find ("Bloom02").GetComponent<Portal> ().LevelCounter;
+		num = Random.Range (1, 10);
+		EnemySpawnCounter = LevelCounter * 5 * num;
 		StartCoroutine(countdown(EnemySpawnCounter));
+		Debug.Log (EnemySpawnCounter);
 	}
 	// Update is called once per frame
 	void Update () {
