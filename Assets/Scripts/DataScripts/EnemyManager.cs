@@ -18,7 +18,7 @@ public class EnemyManager : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		LevelCounter = GameObject.Find ("Bloom02").GetComponent<Portal> ().LevelCounter;
+		LevelCounter = 1;
 		num = Random.Range (1, 10);
 		EnemySpawnCounter = LevelCounter * 5 * num;
 		StartCoroutine(countdown(EnemySpawnCounter));
